@@ -1,14 +1,35 @@
 <head>
-  <title>study_by_myself</title>
+	<title>Leaderboard</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+	<div class="outer">
+		{{> leaderboard}}
+	</div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="leaderboard">
+	<div class="leaderboard">
+		{{#each players}}
+		{{> player}}
+		{{/each}}
+	</div>
+
+	{{#if selected_name}}
+		<div class="details">
+			<div class="name">{{selected_name}}</div>
+			<button class="inc">Give 5 points</button>
+		</div>
+	{{else}}
+		<div class="none">Click a player to select</div>
+	{{/if}}
 </template>
+
+<template name="player">
+	<div class="player {{selected}}">
+		<span class="name">{{name}}</span>
+		<span class="score">{{score}}</span>
+	</div>
+</template>
+

@@ -20,6 +20,12 @@ ps:
 2: 数据库在哪？
 	meteor 把数据库放在自己的.meteor/local 下，以方便自己可以随时调用。启动shell查看必须先启动 meteor服务 然后 meteor mongo
 
+3: 常用包介绍：
+	autopublish是一个用来自动发布服务器端collection到客户端的库。
+	insecure是一个允许客户端对服务器端publish出来的数据有全部read/write权限的库。
+	preserve-inputs比较难解释一些，它指在meteor自动更新dom时，对于form中的各种输入组件，不重新生成。
+	具体见：http://http://docs.meteor.com/。
+
 
 待学习：
 	1：http://www.chorusjs.com/docs/
