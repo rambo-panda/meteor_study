@@ -1,7 +1,6 @@
 {
 	"unused" : "vars",
 	"forin"  : true,
-	"globalstrict" : true,
 
 	"node": true,
 	"eqeqeq": true,
@@ -17,6 +16,7 @@
 		"Mongo"  : true,
 		"Template" : true,
 		"Session"  : true,
+		"Router"   : true,
 
 
 		"module" : true,
