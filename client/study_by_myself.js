@@ -1,5 +1,4 @@
 /*global Players:true */
-"use strict";
 Players = new Mongo.Collection("players");
 
 Template.leaderboard.helpers({

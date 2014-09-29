@@ -26,6 +26,11 @@ ps:
 	preserve-inputs比较难解释一些，它指在meteor自动更新dom时，对于form中的各种输入组件，不重新生成。
 	具体见：http://http://docs.meteor.com/。
 
+4: route 包
+	1： 安装 meteor add iron:route@1.0.0-pre
+	2:  必须放在根目录  还未找到什么原因。  将route.js放到server里就不行
+	3:  如果路由中指定了 template 那么就不需要在模板中进行调用了
+
 
 待学习：
 	1：http://www.chorusjs.com/docs/
