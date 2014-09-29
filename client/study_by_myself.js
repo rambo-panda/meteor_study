@@ -1,4 +1,3 @@
-if (Meteor.isClient) {
   // Session 可以把它想象成一个全局变量
   Session.setDefault("counter", 0);
 
@@ -17,10 +16,3 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     }
   });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
