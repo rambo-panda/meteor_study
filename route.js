@@ -20,4 +20,4 @@ Router.route('/', function () {
 
 Router.route('/one');
 
-Router.route('/two');
+Router.route('/second');
