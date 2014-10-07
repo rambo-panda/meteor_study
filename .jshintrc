@@ -12,11 +12,12 @@
 	"expr" : true,
 
 	"globals": {
-		"Meteor" : true,
-		"Mongo"  : true,
+		"Meteor"   : true,
+		"Mongo"    : true,
 		"Template" : true,
 		"Session"  : true,
 		"Router"   : true,
+		"Npm"      : true,
 
 
 		"module" : true,

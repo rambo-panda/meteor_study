@@ -1,30 +1,32 @@
-/*global Players:true */
-Players = new Mongo.Collection("players");
+if (Meteor.isClient) {
+	/*global Players:true */
+	Players = new Mongo.Collection("players");
 
-Template.leaderboard.helpers({
-	players: function () {
-		return Players.find({}, {sort: {score: -1, name: 1}});
-	},
-	selected_name: function () {
-		var player = Players.findOne(Session.get("selected_player"));
-		return player && player.name;
-	}
-});
+	Template.leaderboard.helpers({
+		players: function () {
+			return Players.find({}, {sort: {score: -1, name: 1}});
+		},
+		selected_name: function () {
+			var player = Players.findOne(Session.get("selected_player"));
+			return player && player.name;
+		}
+	});
 
-Template.player.helpers({
-	selected: function () {
-		return Session.equals("selected_player", this._id) ? "selected" : '';
-	}
-});
+	Template.player.helpers({
+		selected: function () {
+			return Session.equals("selected_player", this._id) ? "selected" : '';
+		}
+	});
 
-Template.leaderboard.events({
-	'click button.inc': function () {
-		Players.update(Session.get("selected_player"), {$inc: {score: 5}});
-	}
-});
+	Template.leaderboard.events({
+		'click button.inc': function () {
+			Players.update(Session.get("selected_player"), {$inc: {score: 5}});
+		}
+	});
 
-Template.player.events({
-	'click': function () {
-		Session.set("selected_player", this._id);
-	}
-});
+	Template.player.events({
+		'click': function () {
+			Session.set("selected_player", this._id);
+		}
+	});
+}
